@@ -3,15 +3,15 @@ import { Fragment } from "react";
 import Score from "../../components/score";
 import Hand from "../../components/hand";
 
-import { BONUS_HANDTYPE } from "../../constants/constants";
+import { ORIGINAL_HANDTYPE } from "../../constants/constants";
 
-function Bonus(){
+function Original(){
     return (
         <Fragment>
             <Score />
             <div className="gameboard">
                 {
-                    BONUS_HANDTYPE.map((item: string, key: number) =>{
+                    ORIGINAL_HANDTYPE.map((item: string, key: number) =>{
                         return(<Hand key={key} hand={item}/>)
                     })
                 }              
@@ -20,4 +20,4 @@ function Bonus(){
     );
 }
 
-export default Bonus;
+export default Original;

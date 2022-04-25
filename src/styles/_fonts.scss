@@ -1,0 +1,13 @@
+$base-url: '../../public/assets/fonts/';
+
+@font-face {
+    font-family: 'BarlowSemiCondensed';
+    src: url( $base-url + 'BarlowSemiCondensed-SemiBold.ttf' ) format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'BarlowSemiCondensed';
+    src: url( $base-url + 'BarlowSemiCondensed-Bold.ttf' ) format('truetype');
+    font-weight: 700;
+}

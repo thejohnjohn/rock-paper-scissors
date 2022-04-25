@@ -1,0 +1,48 @@
+@import '../../styles/colors';
+
+.scoreboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    width: 80vw;
+    height: 25vw;
+    position: relative;
+    left:10vw;
+    top: 40px;
+
+    border: 3px solid $header-outline;
+    border-radius: 7px;
+
+    .name-of-the-game{
+        height: 80%;
+        margin: 10px 0px 0px 10px;
+    }
+    
+    .scores{
+        height: 80%;
+        aspect-ratio: 1/1;
+        margin: 10px 10px 0px 0px;
+        background-color: white;
+        border-radius: 7px;
+
+        h5{
+            margin-top: 8px;/*remove*/
+
+            font-family: 'BarlowSemiCondensed';
+            font-size: 20px;
+            font-weight: 600;
+
+            text-align: center;
+            color: $dark-text;
+        }
+        h3{
+            font-family: 'BarlowSemiCondensed';
+            font-size: 40px;
+            font-weight: 700;
+
+            text-align: center;
+            color: $dark-text;
+        }
+    }
+}

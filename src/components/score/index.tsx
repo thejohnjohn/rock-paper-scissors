@@ -1,14 +1,11 @@
-import React from 'react';
-import './score.css';
+import './style.scss';
 
 const Score = () => {
     return(
         <div className="scoreboard">
-            <div className="name-of-the-game">
-                <p>ROCK</p>
-                <p>PAPER</p>
-                <p>SCISSORS</p>
-            </div>
+            <img src="http://localhost:3000/assets/logo.svg" 
+                 className="name-of-the-game" 
+                 alt="Logo of the game mode"/>
             <div className="scores">
                 <h5>SCORE</h5>
                 <h3>12</h3>
