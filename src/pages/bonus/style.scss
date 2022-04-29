@@ -1,0 +1,35 @@
+.gameboard-bonus    {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('http://localhost:3000/assets/bg-pentagon.svg');
+    background-size: 250px;
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    img{
+        display: inline;
+        position: relative;
+    }
+
+    img:nth-child(1){
+        left: 49px !important; bottom: 22px !important;
+    }
+
+    img:nth-child(2){
+        top: 102px !important;
+    }
+
+    img:nth-child(3){
+        bottom: 100px;
+    }
+
+    img:nth-child(4){
+        left: 33px !important; bottom: 26px !important;
+    }
+
+    img:nth-child(5){
+        top: 102px !important; left: -87px !important; right: 0px; bottom: 0px;
+    }
+}

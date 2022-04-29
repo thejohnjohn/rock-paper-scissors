@@ -2,7 +2,7 @@
 
 .select-mode-panel{
     position: relative;
-    top: 50px;
+    top: 25vh;
 
     h1{
         text-align: center;
@@ -18,9 +18,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 40px;
+
         .button{
-            width: 80%;
+            width: 300px;
             height: 30px;
+            margin-bottom: 20px;
 
             background-color: white;
             border-radius: 5px;

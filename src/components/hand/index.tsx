@@ -1,9 +1,12 @@
+import './style.scss';
+
 const Hand = (props: any) =>{
-    const { hand } = props;
+    const { hand, action } = props;
     return (
-        <img src={`http://localhost:3000/assets/hand-buttons/${hand.toLowerCase()}-btn.svg`} 
+        <img src={`http://localhost:3000/assets/hand-buttons/${hand}-btn.svg`}
              className="handtype"
-             alt={`${hand.toLowerCase() || "type"} hand`}/>
+             alt={`${hand} hand`}
+             onClick={ action }/>
     );
 };
 

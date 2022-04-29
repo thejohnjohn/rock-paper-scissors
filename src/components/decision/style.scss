@@ -1,0 +1,45 @@
+@import '../../styles/colors';
+
+.decision{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 25%;
+    margin-bottom: 30px;
+}
+
+.picked-hand{
+    width: 100px;
+        aspect-ratio: 1 / 1;
+}
+
+.result-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.result{
+    margin-bottom: 15px;
+    font-family: 'BarlowSemiCondensed';
+    font-weight: 600;
+    color: white;
+    font-size: 30px;
+}
+
+.play-again{
+    width: 150px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: white;
+    
+    font-family: 'BarlowSemiCondensed';
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: $dark-text;
+
+    outline: 0px;
+    border: 0px;
+}

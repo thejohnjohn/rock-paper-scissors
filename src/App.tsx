@@ -1,11 +1,13 @@
-import Pages from './pages';
-import Original from './pages/original';
-import Bonus from './pages/bonus';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+
+import Pages from './pages';
+import Original from './pages/original';
+import Bonus from './pages/bonus';
+
 function App() {
   return (
     <BrowserRouter>

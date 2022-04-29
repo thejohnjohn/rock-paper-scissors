@@ -1,0 +1,29 @@
+.rules{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10vw;
+    width: 100%;
+}
+
+.back-to-game-options{
+    width: 110px;
+    aspect-ratio: 110/33;
+    fill: white;
+}
+
+.show-the-rules{
+    width: 110px;
+    aspect-ratio: 110/33;
+
+    background-color: transparent;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 7px;
+
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;   
+    font-weight: 600;
+}

@@ -1,0 +1,27 @@
+.gameboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('http://localhost:3000/assets/bg-triangle.svg');
+    background-size: 200px;
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    img{
+        display: inline;
+        position: relative;
+    }
+
+    img:nth-child(1){
+        bottom: 25%;
+    }
+
+    img:nth-child(2){
+        top: 25%;
+    }
+
+    img:nth-child(3){
+        bottom: 25%;
+    }
+}

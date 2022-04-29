@@ -1,14 +1,15 @@
 import './style.scss';
 
-const Score = () => {
+const Score = ({ gameModeLogo, score }: any) => {
+    
     return(
         <div className="scoreboard">
-            <img src="http://localhost:3000/assets/logo.svg" 
+            <img src={`http://localhost:3000/assets/${gameModeLogo}.svg`} 
                  className="name-of-the-game" 
                  alt="Logo of the game mode"/>
             <div className="scores">
                 <h5>SCORE</h5>
-                <h3>12</h3>
+                <h3>{score}</h3>
             </div>
         </div>);
 };
