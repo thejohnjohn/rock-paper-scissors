@@ -19,43 +19,38 @@ function Original() {
     const [whoWin, setWhoWin] = useState([' ', 0]);
     const [decide, setDecision] = useState(true);
 
-    if(decide){
-        return(
-            <Fragment >
-                <Score gameModeLogo={'logo'} score={score}/>
+    return(
+        <Fragment >
+            <Score gameModeLogo={'logo'} score={score}/>
+            {decide ? (
                 <div className="gameboard">
-                    {
-                        ORIGINAL_HANDTYPE.map((item: string, key: number) =>{
-                            return(
-                                <Hand key={key} hand={item} 
-                                    action={ (e: any)=> { 
-                                        setPlayerHand(item);
-                                        setEnemyHand(cpuDecision(ORIGINAL_HANDTYPE)); 
-                                        setWhoWin(ORIGINAL_RULES[playerHand][enemyHand]);
-                                        setScore(score+(whoWin[1] as number));
-                                        setDecision(!decide);
-                                    }}/>
-                            )
-                        })
-                    }
+                {
+                    ORIGINAL_HANDTYPE.map((item: string, key: number) =>{
+                        return(
+                            <Hand key={key} hand={item} 
+                                action={ (e: any)=> { 
+                                    setPlayerHand(item);
+                                    setEnemyHand(cpuDecision(ORIGINAL_HANDTYPE)); 
+                                    setWhoWin(ORIGINAL_RULES[playerHand][enemyHand]);
+                                    setScore(score+(whoWin[1] as number));
+                                    setDecision(!decide);
+                                }}/>
+                        )
+                    })
+                }
                 </div>
-                <Rules />
+            ):
+                (<Decision player={playerHand}
+                            enemy={enemyHand}
+                            result={whoWin[0]}
+                            playAgain={(e: any) =>{
+                                setDecision(!decide)
+                            }}/>
+                )
+            }
+            <Rules modeRules={'image-rules'}/>
             </Fragment>
         )
-    }
-
-    return (
-        <Fragment>
-            <Score gameModeLogo={'logo'} score={score}/>
-            <Decision player={playerHand}
-                      enemy={enemyHand}
-                      result={whoWin[0]}
-                      playAgain={(e: any) =>{
-                          setDecision(!decide)
-                      }}/>
-            <Rules />
-        </Fragment>
-    )
 }
 
 export default Original;

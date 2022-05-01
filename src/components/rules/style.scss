@@ -1,6 +1,6 @@
 .rules{
     position: absolute;
-    bottom: 5px;
+    bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -12,11 +12,19 @@
     width: 110px;
     aspect-ratio: 110/33;
     fill: white;
+    transition: all 1s;
+}
+
+.back-to-game-options:hover{
+    width: 130px;
+    aspect-ratio: 110/33;
 }
 
 .show-the-rules{
     width: 110px;
     aspect-ratio: 110/33;
+
+    transition: all 1s;
 
     background-color: transparent;
     border: 2px solid hsl(217, 16%, 45%);
@@ -26,4 +34,10 @@
     color: white;
     letter-spacing: 1px;   
     font-weight: 600;
+}
+
+.show-the-rules:hover{
+    width: 130px;
+    background-color: white;
+    color:hsl(217, 16%, 45%);
 }

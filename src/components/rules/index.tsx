@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import Modal from './rules-modal/index';
 
 import './style.scss'
 
 const Rules = (props: any) =>{
-    const { backButton } = props;
+    const { backButton, modeRules } = props;
+
+    const [show, setShow] = useState(false);
+    const openModal = () => setShow(true);
+    const closeModal = () => setShow(false);
 
     return(
         <footer className='rules'>
@@ -13,8 +20,9 @@ const Rules = (props: any) =>{
                  onClick={backButton}
                  alt='White button who back to the select game mode page.'/>
             </Link>
+            { show && <Modal show={show} close={closeModal} modeRules={modeRules}/> }
             <button className='show-the-rules'
-                    onClick={()=>{console.log('Da rules')}}>RULES</button>
+                    onClick={openModal}>RULES</button>
         </footer>
     );
 }
