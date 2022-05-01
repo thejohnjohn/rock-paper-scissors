@@ -10,25 +10,31 @@ import './style.scss';
 import { ORIGINAL_HANDTYPE, ORIGINAL_RULES } from "../../constants/constants";
 import cpuDecision from "../../utils/cpu";
 
+
 function Original() {
 
+    const [score, setScore] = useState(0);
+    const [playerHand, setPlayerHand] = useState('');
+    const [enemyHand, setEnemyHand] = useState('');
+    const [whoWin, setWhoWin] = useState([' ', 0]);
     const [decide, setDecision] = useState(true);
-    const [choosedHand, setHand] = useState('');
-
-    let enemy: string = cpuDecision(ORIGINAL_HANDTYPE);
 
     if(decide){
         return(
             <Fragment >
-                <Score gameModeLogo={'logo'}/>
+                <Score gameModeLogo={'logo'} score={score}/>
                 <div className="gameboard">
                     {
                         ORIGINAL_HANDTYPE.map((item: string, key: number) =>{
                             return(
                                 <Hand key={key} hand={item} 
-                                    action={(e: any)=> { 
-                                        setHand(item); 
-                                        setDecision(!decide)}}/>
+                                    action={ (e: any)=> { 
+                                        setPlayerHand(item);
+                                        setEnemyHand(cpuDecision(ORIGINAL_HANDTYPE)); 
+                                        setWhoWin(ORIGINAL_RULES[playerHand][enemyHand]);
+                                        setScore(score+(whoWin[1] as number));
+                                        setDecision(!decide);
+                                    }}/>
                             )
                         })
                     }
@@ -37,18 +43,18 @@ function Original() {
             </Fragment>
         )
     }
-    
+
     return (
         <Fragment>
-            <Score gameModeLogo={'logo'}/>
-            <Decision player={choosedHand}
-                      enemy={enemy}
-                      result={ORIGINAL_RULES[choosedHand][enemy]}
+            <Score gameModeLogo={'logo'} score={score}/>
+            <Decision player={playerHand}
+                      enemy={enemyHand}
+                      result={whoWin[0]}
                       playAgain={(e: any) =>{
                           setDecision(!decide)
                       }}/>
-            <Rules />          
-        </Fragment>    
+            <Rules />
+        </Fragment>
     )
 }
 

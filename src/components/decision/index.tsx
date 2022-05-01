@@ -11,17 +11,17 @@ function Decision(props: any){
 
     return(
         <Fragment>
-        <div className="decision">
-            <Hand hand={player}/>
-            <Hand hand={enemy}/>
-        </div>
-        <div className="result-ctn">
-            <span className="result">{result}</span>
-            <button className="play-again"
-                    onClick={playAgain} >
-                    PLAY AGAIN
-            </button>
-        </div>
+            <div className="decision">
+                <Hand hand={player}/>
+                <Hand hand={enemy}/>
+            </div>
+            <div className="result-ctn">
+                <span className="result">{result}</span>
+                <button className="play-again"
+                        onClick={playAgain} >
+                        PLAY AGAIN
+                </button>
+            </div>
         </Fragment>
     );
 }

@@ -1,5 +1,7 @@
 .gameboard{
     display: flex;
+    max-height: 300px;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     background-image: url('http://localhost:3000/assets/bg-triangle.svg');
@@ -11,17 +13,28 @@
     img{
         display: inline;
         position: relative;
+        width: 85px;
+        border-radius: 100%;
+    }
+
+    img:hover{
+        box-shadow: 0px 0px 20px 20px whitesmoke;
     }
 
     img:nth-child(1){
-        bottom: 25%;
+        right: 20px;
+        margin-top: 20px;
+        align-self: start;
     }
 
     img:nth-child(2){
-        top: 25%;
+        align-self: end;
+        margin-bottom: 20px;
     }
 
     img:nth-child(3){
-        bottom: 25%;
+        left: 20px;
+        margin-top: 20px;
+        align-self: start;
     }
 }

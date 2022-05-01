@@ -6,17 +6,19 @@
   "keywords": [
     "react",
     "sass",
-    "typescript"
+    "typescript",
+    "react-router",
+    "local storage"
   ],
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router": "^6.3.0",
+    "react-router-cache-route": "^1.12.7",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sass": "^1.50.1",
-    "typescript": "^4.6.3",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.6.3"
   },
   "scripts": {
     "start": "react-scripts start",

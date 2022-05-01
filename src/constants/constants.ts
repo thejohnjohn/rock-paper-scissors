@@ -8,67 +8,67 @@ const BONUS_HANDTYPE = [
 
 interface IRules{
     [key: string]: {
-        [key: string]: string
+        [key: string]: [string, number]
     }
 }
 
 const ORIGINAL_RULES: IRules = {
     rock: {
-        rock: 'DRAW',
-        scissors: 'YOU WIN',
-        paper: 'YOU LOSE'
+        rock: ['DRAW', 0],
+        scissors: ['YOU WIN', 1],
+        paper: ['YOU LOSE', -1]
     },
     paper: {
-        paper: 'DRAW',
-        rock: 'YOU WIN',
-        scissors: 'YOU LOSE'
+        paper: ['DRAW', 0],
+        rock: ['YOU WIN', 1],
+        scissors: ['YOU LOSE', -1]
     },
     scissors: {
-        scissors: 'DRAW',
-        paper: 'YOU WIN',
-        rock: 'YOU LOSE'
+        scissors: ['DRAW', 0],
+        paper: ['YOU WIN', 1],
+        rock: ['YOU LOSE', -1]
     }
 }
 
 const BONUS_RULES: IRules = {
     rock: {
-        rock: 'DRAW',
-        scissors: 'YOU LOSE',
-        paper: 'YOU WIN',
-        spock: 'YOU WIN',
-        lizard: 'YOU LOSE'
+        rock: ['DRAW', 0],
+        scissors: ['YOU LOSE', -1],
+        paper: ['YOU WIN', 1],
+        spock: ['YOU WIN', 1],
+        lizard: ['YOU LOSE', -1]
     },
     paper: {
-        paper: 'DRAW',
-        rock: 'YOU LOSE',
-        scissors: 'YOU WIN',
-        lizard: 'YOU WIN',
-        spock: 'YOU LOSE'
+        paper: ['DRAW', 0],
+        rock: ['YOU LOSE', -1],
+        scissors: ['YOU WIN', 1],
+        lizard: ['YOU WIN', 1],
+        spock: ['YOU LOSE', -1]
     },
     scissors: {
-        scissors: 'DRAW',
-        paper: 'YOU LOSE',
-        rock: 'YOU WIN',
-        lizard: 'YOU LOSE',
-        spock: 'YOU WIN'
+        scissors: ['DRAW', 0],
+        paper: ['YOU LOSE', -1],
+        rock: ['YOU WIN', 1],
+        lizard: ['YOU LOSE', -1],
+        spock: ['YOU WIN', 1]
     },
     lizard: {
-        scissors: 'YOU WIN',
-        paper: 'YOU LOSE',
-        rock: 'YOU WIN',
-        lizard: 'DRAW',
-        spock: 'YOU LOSE'
+        scissors: ['YOU WIN', 1],
+        paper: ['YOU LOSE', -1],
+        rock: ['YOU WIN', 1],
+        lizard: ['DRAW', 0],
+        spock: ['YOU LOSE', -1]
     },
     spock: {
-        scissors: 'YOU LOSE',
-        paper: 'YOU WIN',
-        rock: 'YOU LOSE',
-        lizard: 'YOU WIN',
-        spock: 'DRAW'
+        scissors: ['YOU LOSE', -1],
+        paper: ['YOU WIN', 1],
+        rock: ['YOU LOSE', -1],
+        lizard: ['YOU WIN', 1],
+        spock: ['DRAW', 0]
     }
 }
 
 export { ORIGINAL_HANDTYPE,  
          BONUS_HANDTYPE, 
          ORIGINAL_RULES,
-         BONUS_RULES};
+         BONUS_RULES };
