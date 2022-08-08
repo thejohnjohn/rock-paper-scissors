@@ -44,6 +44,7 @@ function Original() {
                             enemy={enemyHand}
                             result={whoWin[0]}
                             playAgain={(e: any) =>{
+                                console.log(whoWin)
                                 setDecision(!decide)
                             }}/>
                 )

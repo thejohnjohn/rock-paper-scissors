@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 
 import './style.scss'
 
-const Modal = ({ modeRules, close}: any) => {
+const Modal = ({modeRules, close}: any) => {
     return ReactDOM.createPortal(
         <div className="overlay">
             <div className="modal-content">
