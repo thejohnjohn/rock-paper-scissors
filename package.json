@@ -7,8 +7,7 @@
     "react",
     "sass",
     "typescript",
-    "react-router",
-    "local storage"
+    "react-router"
   ],
   "dependencies": {
     "react": "^18.0.0",

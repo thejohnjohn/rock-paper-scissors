@@ -15,7 +15,7 @@ function Bonus() {
     const [score, setScore] = useState(0);
     const [playerHand, setPlayerHand] = useState('');
     const [enemyHand, setEnemyHand] = useState('');
-    const [whoWin, setWhoWin] = useState([' ', 0]);
+    const [whoWin, setWhoWin] = useState('');
     const [decide, setDecision] = useState(true);
 
     return(
@@ -27,11 +27,16 @@ function Bonus() {
                     BONUS_HANDTYPE.map((item: string, key: number) =>{
                         return(
                             <Hand key={key} hand={item} 
-                                action={ (e: any)=> { 
+                                action={ (e: Event) => {
+                                    let cpu = cpuDecision(BONUS_HANDTYPE);
+                                    setScore( 
+                                        ( score + BONUS_RULES[item][cpu][1] ) >= 0
+                                        ? score + BONUS_RULES[item][cpu][1]
+                                        : 0
+                                    );
+                                    setWhoWin(BONUS_RULES[item][cpu][0]);
                                     setPlayerHand(item);
-                                    setEnemyHand(cpuDecision(BONUS_HANDTYPE)); 
-                                    setWhoWin(BONUS_RULES[playerHand][enemyHand]);
-                                    setScore(score+(whoWin[1] as number));
+                                    setEnemyHand(cpu);
                                     setDecision(!decide);
                                 }}/>
                         )
@@ -39,12 +44,13 @@ function Bonus() {
                 }
                 </div>
             ):
-                (<Decision player={playerHand}
-                            enemy={enemyHand}
-                            result={whoWin[0]}
-                            playAgain={(e: any) =>{
-                                setDecision(!decide)
-                            }}/>
+                (
+                    <Decision player={playerHand}
+                        enemy={enemyHand}
+                        result={whoWin}
+                        playAgain={(e: Event) => {
+                            setDecision(!decide)
+                        }}/>
                 )
             }
             <Rules modeRules={'image-rules-bonus'}/>

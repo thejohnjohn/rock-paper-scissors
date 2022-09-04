@@ -16,7 +16,7 @@ function Original() {
     const [score, setScore] = useState(0);
     const [playerHand, setPlayerHand] = useState('');
     const [enemyHand, setEnemyHand] = useState('');
-    const [whoWin, setWhoWin] = useState([' ', 0]);
+    const [whoWin, setWhoWin] = useState('');
     const [decide, setDecision] = useState(true);
 
     return(
@@ -28,11 +28,16 @@ function Original() {
                     ORIGINAL_HANDTYPE.map((item: string, key: number) =>{
                         return(
                             <Hand key={key} hand={item} 
-                                action={ (e: any)=> { 
+                                action={ (e: Event)=> {
+                                    let cpu = cpuDecision(ORIGINAL_HANDTYPE);
+                                    setScore( 
+                                        ( score + ORIGINAL_RULES[item][cpu][1] ) >= 0
+                                        ? score + ORIGINAL_RULES[item][cpu][1]
+                                        : 0
+                                    );
+                                    setWhoWin(ORIGINAL_RULES[item][cpu][0]);
                                     setPlayerHand(item);
-                                    setEnemyHand(cpuDecision(ORIGINAL_HANDTYPE)); 
-                                    setWhoWin(ORIGINAL_RULES[playerHand][enemyHand]);
-                                    setScore(score+(whoWin[1] as number));
+                                    setEnemyHand(cpu);
                                     setDecision(!decide);
                                 }}/>
                         )
@@ -42,9 +47,8 @@ function Original() {
             ):
                 (<Decision player={playerHand}
                             enemy={enemyHand}
-                            result={whoWin[0]}
-                            playAgain={(e: any) =>{
-                                console.log(whoWin)
+                            result={whoWin}
+                            playAgain={(e: Event) =>{
                                 setDecision(!decide)
                             }}/>
                 )
