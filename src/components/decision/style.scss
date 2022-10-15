@@ -1,6 +1,7 @@
 @import '../../styles/colors';
 
 .decision{
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -49,8 +50,19 @@
     color: red;
 }
 
-@media screen and (min-width: 600px) {
+/*@media screen and (min-height: 800px){
     .result-ctn{
+        bottom: 140px;
+    }
+}*/
+
+@media screen and (min-width: 600px) and (orientation: landscape){
+    .decision {
+        height: 160px;
+        top: calc((100% - 160px) / 2);
+    }
+    
+    .result-ctn { 
         bottom: 140px;
     }
 }

@@ -7,7 +7,7 @@ const Modal = ({modeRules, close}: any) => {
         <div className="overlay">
             <div className="modal-content">
                 <div className='modal-header'>
-                    <span>RULES</span>
+                    <span>Art Info</span>
                     <img src={`http://localhost:3000/assets/icon-close.svg`}
                             className='close-modal'
                             alt={`Close modal.`}
