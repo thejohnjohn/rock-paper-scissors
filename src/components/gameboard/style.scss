@@ -1,0 +1,104 @@
+.gameboard {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url('http://localhost:3000/assets/bg-triangle.svg');
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  .image {
+    display: inline;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+  
+    &:hover {
+      box-shadow: 0px 0px 0px 30px rgba(255, 255, 255,0.12),
+                  0px 0px 0px 60px rgba(255, 255, 255,0.09),
+                  0px 0px 0px 90px rgba(255, 255, 255,0.05);
+    }
+
+    &:nth-child(1) {
+      left: 20px;
+      top: 8px;
+    }
+  
+    &:nth-child(2) {
+      top: 180px;
+    }
+  
+    &:nth-child(3) {
+      right: 20px;
+      top: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (orientation: portrait) {
+  .gameboard {
+    height: 600px;
+    width: 600px;
+    background-size: 400px;
+  
+    .image {
+      width: 270px;
+      height: 270px;
+      border-radius: 100%;
+    
+      &:nth-child(1) {
+        left: 40px;
+        top: 16px;
+      }
+  
+      &:nth-child(2) {
+        top: 360px;
+      }
+  
+      &:nth-child(3) {
+        right: 40px;
+        top: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .gameboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 400px;
+    width: 400px;
+    background-size: 300px;
+
+    .image {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+    
+      &:nth-child(1) {
+        left: 50px;
+        top: -25px;
+      }
+  
+      &:nth-child(2) {
+        top: 200px;
+      }
+  
+      &:nth-child(3) {
+        right: 50px;
+        top: -25px;
+      }
+    }
+  }
+}
