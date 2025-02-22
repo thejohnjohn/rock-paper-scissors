@@ -8,7 +8,7 @@ const Score = ({ gameModeLogo, score }: any) => {
                  className="name-of-the-game" 
                  alt="Logo of the game mode"/>
             <div className="scores">
-                <h5>SCORE</h5>
+                <h5>Teste de mudança</h5>
                 <h3>{score}</h3>
             </div>
         </div>);
